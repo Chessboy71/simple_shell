@@ -14,7 +14,7 @@ char **tokenise(char *ln)
 	char **cmd = NULL;
 	char *tmp = NULL, *tkn = NULL;
 
-	tmp = strdup(ln);
+	tmp = _strdup(ln);
 	tkn = strtok(tmp, " \n\t");
 	if (!tkn)
 	{
@@ -38,7 +38,7 @@ char **tokenise(char *ln)
 	tkn = strtok(ln, " \n\t");
 	while (tkn)
 	{
-		cmd[j] = strdup(tkn);
+		cmd[j] = _strdup(tkn);
 		tkn = strtok(NULL, " \n\t");
 		j++;
 	}

@@ -20,7 +20,7 @@ char *_getpath(char *cmd)
 		{
 			if (stat(cmd, &st) == 0)
 			{
-				return (strdup(cmd));
+				return (_strdup(cmd));
 			}
 			return (NULL);
 		}
@@ -31,12 +31,12 @@ char *_getpath(char *cmd)
 	dir = strtok(pth, ":");
 	while (dir)
 	{
-		fullcmd = malloc(strlen(dir) + strlen(cmd) + 2);
+		fullcmd = malloc(_strlen(dir) +_strlen(cmd) + 2);
 		if (fullcmd)
 		{
-			strcpy(fullcmd, dir);
-			strcat(fullcmd, "/");
-			strcat(fullcmd, cmd);
+			_strcpy(fullcmd, dir);
+			_strcat(fullcmd, "/");
+			_strcat(fullcmd, cmd);
 			if (stat(fullcmd, &st) == 0)
 			{
 				free(pth);

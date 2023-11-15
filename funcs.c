@@ -83,12 +83,12 @@ void printerr(char *nm, char *cmd, int i)
 
 	index = _itoa(i);
 
-	write(STDERR_FILENO, nm, strlen(nm));
+	write(STDERR_FILENO, nm, _strlen(nm));
 	write(STDERR_FILENO, ": ", 2);
-	write(STDERR_FILENO, index, strlen(index));
+	write(STDERR_FILENO, index, _strlen(index));
 	write(STDERR_FILENO, ": ", 2);
-	write(STDERR_FILENO, cmd, strlen(cmd));
-	write(STDERR_FILENO, mssg, strlen(mssg));
+	write(STDERR_FILENO, cmd, _strlen(cmd));
+	write(STDERR_FILENO, mssg, _strlen(mssg));
 
 	free(index);
 }
