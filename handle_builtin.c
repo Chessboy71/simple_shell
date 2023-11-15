@@ -9,8 +9,7 @@
 int is_builtin(char *cmd)
 {
 	char *buil[] = {
-		"exit", "env", NULL
-	};
+		"exit", "env", NULL};
 	int i;
 
 	for (i = 0; buil[i]; i++)

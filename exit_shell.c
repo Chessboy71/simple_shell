@@ -16,10 +16,8 @@ void exit_shell(char **cmd, char **arg, int *s, int i)
 	if (cmd[1])
 	{
 		if (is_positive_num(cmd[1]))
-		{
 			exit_val = _atoi(cmd[1]);
-			freearr(cmd);
-		}
+
 		else
 		{
 			ind = _itoa(i);

@@ -18,8 +18,8 @@ char **tokenise(char *ln)
 	tkn = strtok(tmp, " \n\t");
 	if (!tkn)
 	{
-		free(ln);
-		free(tmp);
+		free(ln), ln = NULL;
+		free(tmp), tmp = NULL;
 		return (NULL);
 	}
 	while (tkn)
