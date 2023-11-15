@@ -5,6 +5,7 @@
  *
  * @args: the tokenised line
  * @argv : the name of the shell
+ * @i : index
  *
  * Return: 1 upon succes, 0 if no
  */

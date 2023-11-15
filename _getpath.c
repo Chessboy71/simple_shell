@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
+ * _getpath - Get the full path of a cmd
+ * @cmd: The cmd
  * freearr - frees the array given
- *
  * @arr:
- *
  * Return: 1 upon succes, 0 if no
  */
 
@@ -22,20 +22,16 @@ char *_getpath(char *cmd)
 			{
 				return (strdup(cmd));
 			}
-
 			return (NULL);
 		}
 	}
 	pth = _getenv("PATH");
 	if (!pth)
 		return (NULL);
-
 	dir = strtok(pth, ":");
-
 	while (dir)
 	{
 		fullcmd = malloc(strlen(dir) + strlen(cmd) + 2);
-
 		if (fullcmd)
 		{
 			strcpy(fullcmd, dir);
@@ -54,3 +50,4 @@ char *_getpath(char *cmd)
 	free(pth);
 	return (NULL);
 }
+

@@ -21,7 +21,7 @@ void freearr(char **arr)
 }
 
 /**
- * itoa - frees the array given
+ *_itoa - frees the array given
  *
  * @n: the number
  *
