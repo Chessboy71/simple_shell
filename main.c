@@ -30,6 +30,9 @@ int main(int ac, char **argv)
 		cmd = tokenise(line);
 		if (!cmd)
 			continue;
+		if (is_builtin(cmd[0]))
+			handle_builtin(cmd, argv, &status, i);
+		else
 		status = _execute(cmd, argv, i);
 	}
 	return (WEXITSTATUS(status));
