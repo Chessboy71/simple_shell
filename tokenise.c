@@ -27,11 +27,14 @@ char **tokenise(char *ln)
 		tkn = strtok(NULL, " \n\t");
 		i++;
 	}
-	free(tmp);
+	free(tmp), tmp = NULL;
 
-	cmd = malloc(sizeof(char) * (i + 1));
+	cmd = malloc(sizeof(char *) * (i + 1));
 	if (!cmd)
+	{
+		free(ln), ln = NULL;
 		return (NULL);
+	}
 	tkn = strtok(ln, " \n\t");
 	while (tkn)
 	{
@@ -40,7 +43,6 @@ char **tokenise(char *ln)
 		j++;
 	}
 	cmd[j] = NULL;
-	free(ln);
+	free(ln), ln = NULL;
 	return (cmd);
 }
-

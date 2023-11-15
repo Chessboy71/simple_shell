@@ -13,7 +13,7 @@ int main(int ac, char **argv)
 {
 	char *line = NULL;
 	char **cmd = NULL;
-	int status;
+	int status, i = 0;
 
 	(void)ac;
 
@@ -21,12 +21,16 @@ int main(int ac, char **argv)
 	{
 		line = read_line();
 		if (line == NULL)
+		{
+			if (isatty(STDIN_FILENO))
+				write(STDOUT_FILENO, "\n", 1);
 			return (0);
-		printf("%s", line);
+		}
+		i++;
 		cmd = tokenise(line);
 		if (!cmd)
 			continue;
-		status = _execute(cmd, argv);
-		}
+		status = _execute(cmd, argv, i);
+	}
 	return (WEXITSTATUS(status));
 }

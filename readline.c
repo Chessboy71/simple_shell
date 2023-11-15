@@ -12,8 +12,8 @@ char *read_line()
 	size_t n = 0;
 	ssize_t line;
 
-	putchar('$');
-	putchar(' ');
+	if (isatty(STDIN_FILENO))
+		write(STDOUT_FILENO, "$ ", 2);
 
 	line = getline(&ln, &n, stdin);
 	if (line < 0)
