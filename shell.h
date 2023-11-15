@@ -30,7 +30,6 @@ int _strlen(char *s);
 char *_strdup(const char *str);
 char *_strcat(char *dest, char *str);
 char *_strcpy(char *dest, char *str);
-int _strcmp(char *s1, char *s2);
 void printerr(char *nm, char *cmd, int i);
 
 /* builtin.c */
