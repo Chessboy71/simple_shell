@@ -31,7 +31,7 @@ char *_getpath(char *cmd)
 	dir = strtok(pth, ":");
 	while (dir)
 	{
-		fullcmd = malloc(_strlen(dir) +_strlen(cmd) + 2);
+		fullcmd = malloc(_strlen(dir) + _strlen(cmd) + 2);
 		if (fullcmd)
 		{
 			_strcpy(fullcmd, dir);
