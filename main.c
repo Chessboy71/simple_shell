@@ -27,6 +27,6 @@ int main(int ac, char **argv)
 		if (!cmd)
 			continue;
 		status = _execute(cmd, argv);
-	}
+		}
 	return (WEXITSTATUS(status));
 }

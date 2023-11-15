@@ -14,5 +14,6 @@ extern char **environ;
 char *read_line();
 char **tokenise(char *ln);
 int _execute(char **args, char **argv);
+void freearr(char **arr);
 
 #endif

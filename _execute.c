@@ -20,13 +20,14 @@ int _execute(char **args, char **argv)
 		if (execve(args[0], args, environ) == -1)
 		{
 			perror(argv[0]);
+			freearr(args);
 			exit(0);
 		}
 	}
 	else
 	{
 		waitpid(frk, &status, 0);
+		freearr(args);
 	}
 	return (WEXITSTATUS(status));
 }
-
