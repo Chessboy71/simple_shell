@@ -9,14 +9,19 @@
  */
 void exit_shell(char **cmd, char **arg, int *s, int i)
 {
-	int exit_val = *s;
+	int exit_val = 0;
 	char *ind;
 	char msg[] = ": exit: illegal number: ";
+
+	if (*s)
+		exit_val = *s;
 
 	if (cmd[1])
 	{
 		if (is_positive_num(cmd[1]))
+		{
 			exit_val = _atoi(cmd[1]);
+		}
 
 		else
 		{

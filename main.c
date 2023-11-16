@@ -13,7 +13,7 @@ int main(int ac, char **argv)
 {
 	char *line = NULL;
 	char **cmd = NULL;
-	int status, i = 0;
+	int status = 0, i = 0;
 
 	(void)ac;
 
@@ -33,7 +33,7 @@ int main(int ac, char **argv)
 		if (is_builtin(cmd[0]))
 			handle_builtin(cmd, argv, &status, i);
 		else
-		status = _execute(cmd, argv, i);
+			status = _execute(cmd, argv, i);
 	}
 	return (WEXITSTATUS(status));
 }
